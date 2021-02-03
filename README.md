@@ -42,3 +42,32 @@ View the [Chart README](https://github.com/helm/charts/tree/master/stable/postgr
 ```sh
 helm upgrade --install postgresql stable/postgresql --set persistence.enabled=false
 ```
+
+I'm setting `persistence.enabled=false` so that no volumes will be created, we don't need them for testing.
+
+Try the chart:
+
+```
+To get the password for "postgres" run:
+
+    export POSTGRES_PASSWORD=$(kubectl get secret --namespace default postgresql -o jsonpath="{.data.postgresql-password}" | base64 --decode)
+
+To connect to your database run the following command:
+
+    kubectl run postgresql-client --rm --tty -i --restart='Never' --namespace default --image docker.io/bitnami/postgresql:11.6.0-debian-9-r0 --env="PGPASSWORD=$POSTGRES_PASSWORD" --command -- psql --host postgresql -U postgres -d postgres -p 5432
+```
+
+Create a table and select from it:
+
+```sh
+postgres=# create table tester (name int)   
+select * from tester;
+```
+
+Exit with Control + D.
+
+Now you can remove the chart:
+
+```sh
+helm delete postgresql
+```
