@@ -1,0 +1,22 @@
+{
+  "name": "helm-sample-app",
+  "version": "1.0.0",
+  "description": "### Get a Kubernetes cluster",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanalex/helm-sample-app.git"
+  },
+  "author": "Alejandro Pajaron",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanalex/helm-sample-app/issues"
+  },
+  "homepage": "https://github.com/vanalex/helm-sample-app#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
