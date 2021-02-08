@@ -71,3 +71,17 @@ Now you can remove the chart:
 ```sh
 helm delete postgresql
 ```
+
+### Docker
+
+This command will create the docker image
+
+```sh
+docker build -t <your username>/<appname>
+```
+
+You can check the images running the next command
+
+```sh
+docker images
+```
