@@ -77,7 +77,7 @@ helm delete postgresql
 This command will create the docker image
 
 ```sh
-docker build -t <your username>/<appname>
+docker build -t <your username>/<appname> .
 ```
 
 You can check the images running the next command
