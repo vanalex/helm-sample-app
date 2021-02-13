@@ -85,3 +85,25 @@ You can check the images running the next command
 ```sh
 docker images
 ```
+
+If everything is fine, next step is to push the image to a repo
+
+```sh
+docker push vanalex/helm-sample-app
+```
+
+### Manage the app with helm
+
+In order to manage the deployment of te app we are going to use helm.
+
+So, if we have started the cluster, and the image is uploaded to the repo. Then we could apply the helm chart to deploy an access the app. To do so, next step is:
+
+```sh
+helm install helm-sample-app chart/
+```
+
+To check which services are running and which url to visit the app, issue the next command:
+
+```sh
+minikube service list
+```
